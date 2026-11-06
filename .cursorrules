@@ -1,0 +1,8 @@
+# Directives du projet : Générateur de sites Resto & Commerce
+- **Stack technique** : Next.js (App Router), Tailwind CSS, Framer Motion, Lucide Icons, Shadcn / Magic UI.
+- **Helper CSS** : Utilise toujours `import { cn } from "@/lib/utils"` pour assembler les classes Tailwind.
+- **Règle UI/UX** :
+  - Sites orientés conversion (Boutons d'appel à l'action / commande / réservation bien visibles).
+  - Soigne l'expérience mobile (80% des clients consultent sur smartphone).
+  - Utilise des animations fluides mais légères.
+- **Diversité visuelle** : Adapte les typographies et palettes de couleurs au type de commerce (Pizzeria, Street Food, Chic, Boulangerie).
