@@ -169,8 +169,8 @@ export const MENU_SECTIONS: MenuSection[] = [
         note: "Inclus dans le menu, au choix sur l'ardoise.",
         items: [
           line("Fromage ou dessert à l'ardoise", "Au choix.", null, "Inclus", ALLERGEN.ardoiseDessert),
-          line("Coupe Limoncello ou After Eight", "Supplément.", null, "+ 4 €", ALLERGEN.ask),
-          line("Baba signature", "Supplément.", null, "+ 4 €", ALLERGEN.ask),
+          line("Coupe Limoncello ou After Eight", "Supplément.", null, "+ 4 €", ALLERGEN.coupe),
+          line("Baba signature", "Supplément.", null, "+ 4 €", ALLERGEN.baba),
         ],
       },
     ],

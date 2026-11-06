@@ -191,11 +191,14 @@ export function MenuCarte() {
                       {block.note}
                     </p>
                   ) : null}
-                  {block.items.map((item) => (
+                  {block.items.map((item) => {
+                    const priced = item.price !== null || Boolean(item.priceLabel);
+                    return (
                     <article
                       key={item.name}
                       className="border-b-2 border-zinc-400 py-5 last:border-b-0"
                     >
+                      {priced ? (
                       <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-1">
                         <h4
                           className={cn(
@@ -221,6 +224,32 @@ export function MenuCarte() {
                           </div>
                         ) : null}
                       </div>
+                      ) : (
+                      <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4">
+                        <div className="min-w-0">
+                          <h4
+                            className={cn(
+                              display.className,
+                              "min-w-0 text-2xl font-medium leading-tight text-neutral-100 sm:text-3xl"
+                            )}
+                          >
+                            {item.name}
+                          </h4>
+                          {item.ingredients ? (
+                            <p className="mt-1 text-base leading-relaxed text-neutral-400">
+                              <DishDetail text={item.ingredients} />
+                            </p>
+                          ) : null}
+                        </div>
+                        {item.allergenInfo ? (
+                          <AllergenButton
+                            dish={item.name}
+                            items={item.allergenInfo.items}
+                            note={item.allergenInfo.note}
+                          />
+                        ) : null}
+                      </div>
+                      )}
                       {item.call ? (
                         <div className="mt-3">
                           <a
@@ -233,7 +262,8 @@ export function MenuCarte() {
                         </div>
                       ) : null}
                     </article>
-                  ))}
+                    );
+                  })}
                 </div>
               ))}
             </div>
